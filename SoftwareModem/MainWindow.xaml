@@ -1,0 +1,14 @@
+﻿<Window x:Class="SoftwareModem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Software Modem" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="CallButton" Content="Call" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="CallButton_Click"/>
+        <Button x:Name="AnswerButton" Content="Answer" HorizontalAlignment="Left" Margin="90,10,0,0" VerticalAlignment="Top" Width="75" Click="AnswerButton_Click"/>
+        <TextBox x:Name="InputBox" Margin="10,0,90,10" TextWrapping="Wrap" Height="23" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="OutputBox" Margin="10,37,10,38" TextWrapping="Wrap" FontFamily="Consolas" ScrollViewer.CanContentScroll="True"/>
+        <Button x:Name="HangupButton" Content="Hang up" HorizontalAlignment="Left" Margin="170,10,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="HangupButton_Click"/>
+        <Button x:Name="SendButton" Content="Send" Margin="0,0,10,11" Height="22" VerticalAlignment="Bottom" IsDefault="True" Click="SendButton_Click" HorizontalAlignment="Right" Width="75"/>
+
+    </Grid>
+</Window>
