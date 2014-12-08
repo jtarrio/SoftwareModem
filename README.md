@@ -38,7 +38,7 @@ To use the circuit, just replace the telephone with a modem (or, if you have two
 
 ## How to use
 
-After you start the program, select the correct line in and out devices in the drop down boxes.
+After you start the program, select the correct line in device in the drop down box.
 
 If you are using a modem on the remote side, configure the terminal emulator with 8 data bits, no parity, and 1 stop bit (8N1).
 

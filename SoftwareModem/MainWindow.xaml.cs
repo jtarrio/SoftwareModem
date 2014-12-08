@@ -17,7 +17,7 @@ namespace SoftwareModem
         public MainWindow()
         {
             InitializeComponent();
-
+            ScanDevices();
         }
 
         private void CallButton_Click(object sender, RoutedEventArgs e)
@@ -74,10 +74,23 @@ namespace SoftwareModem
             OutputBox.Text += Char.ConvertFromUtf32(b);
         }
 
-        private static WasapiCapture GetCaptureDevice()
+        private void ScanDevices()
         {
             var enumerator = new MMDeviceEnumerator();
-            var device = enumerator.EnumerateAudioEndPoints(DataFlow.Capture, DeviceState.Active)[1];
+            lineInBox.ItemsSource = enumerator.EnumerateAudioEndPoints(DataFlow.Capture, DeviceState.Active);
+            var selectedInput = enumerator.GetDefaultAudioEndpoint(DataFlow.Capture, Role.Multimedia);
+            for (var i = 0; i < lineInBox.Items.Count; ++i)
+            {
+                if ((lineInBox.Items[i] as MMDevice).ID == selectedInput.ID)
+                {
+                    lineInBox.SelectedIndex = i;
+                }
+            }
+        }
+
+        private WasapiCapture GetCaptureDevice()
+        {
+            var device = lineInBox.SelectedItem as MMDevice;
             var capture = new NAudio.CoreAudioApi.WasapiCapture(device);
             capture.ShareMode = AudioClientShareMode.Shared;
             capture.WaveFormat = new WaveFormat();
@@ -101,6 +114,5 @@ namespace SoftwareModem
             }
             modem.SendData(bytes);
         }
-
     }
 }
