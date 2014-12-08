@@ -4,6 +4,8 @@ An implementation of the ITU-T V.21 modem standard, working on a PC over a sound
 
 This program uses your computer's sound card to communicate using the V.21 standard, which allows for communications at up to 300 bps. It can actually talk to a modem, both in call and answer mode, using a small electronic circuit that connects them.
 
+You can see a demo of this program in action, including those beautiful modem noises, at https://youtu.be/yfGg2qu2P6s.
+
 This program was written in C# on Visual Studio Community 2013, with the NAudio library.
 
 ## Hardware
