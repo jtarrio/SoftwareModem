@@ -107,12 +107,14 @@ namespace SoftwareModem
             var device = lineInBox.SelectedItem as MMDevice;
             var capture = new NAudio.CoreAudioApi.WasapiCapture(device);
             capture.ShareMode = AudioClientShareMode.Shared;
-            capture.WaveFormat = new WaveFormat();
             return capture;
         }
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
+            if (modem==null) {
+                MessageBox.Show("Connection is not set up", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             var bytes = new byte[InputBox.Text.Length];
             for (int i = 0; i < InputBox.Text.Length; ++i)
             {
