@@ -8,6 +8,8 @@ You can see a demo of this program in action, including those beautiful modem no
 
 This program was written in C# on Visual Studio Community 2013, with the NAudio library.
 
+Note: this is _not_ good code. I wrote it to learn C#, and I wasn't entirely successful at it. Feel free to lift and reuse the code under the terms of its license, but don't expect it to work right as-is, especially since it's very old.
+
 ## Hardware
 
 If you'd like to connect two computers using this program, you only need a couple of audio cables: connect the line input from one computer to the line output of the other computer and vice versa. Theoretically you could also connect two copies of the program running on the same computer by connecting the computer's line out with its line in using a single audio cable. I haven't tried it, so YMMV.
